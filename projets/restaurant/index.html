@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Saveur - Restaurant Local à Lomé</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: #2c2416;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4a574;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23d4a574" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #d4a574;
+            color: #2c2416;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #c49562;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .menu-item h3 {
+            color: #d4a574;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c2416;
+            margin: 1rem 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            background: #f0f0f0;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-left: 4px solid #d4a574;
+            border-radius: 4px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial .author {
+            font-weight: bold;
+            color: #2c2416;
+        }
+
+        .contact-section {
+            background: #2c2416;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+        }
+
+        .reservation-form {
+            background: white;
+            color: #333;
+            padding: 2rem;
+            border-radius: 4px;
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-group button {
+            width: 100%;
+            background: #d4a574;
+            color: #2c2416;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-group button:hover {
+            background: #c49562;
+        }
+
+        footer {
+            background: #2c2416;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                margin-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h3 style="margin: 0;">🍽️ La Saveur</h3>
+            <div>
+                <a href="#menu">Menu</a>
+                <a href="#galerie">Galerie</a>
+                <a href="#avis">Avis</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>La Saveur</h1>
+        <p>Découvrez l'authenticité de la cuisine togolaise</p>
+        <a href="#menu" class="btn">Voir le Menu</a>
+    </section>
+
+    <section id="menu" class="container">
+        <h2>Notre Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>🥘 Fufu & Sauce</h3>
+                <p>Purée de banane plantain avec une sauce riche à base d'arachide et légumes frais.</p>
+                <div class="price">2,500 FCFA</div>
+                <a href="#contact" class="btn">Commander</a>
+            </div>
+            <div class="menu-item">
+                <h3>🍖 Grillades Mixtes</h3>
+                <p>Sélection de viandes grillées : poulet, boeuf et poisson avec légumes de saison.</p>
+                <div class="price">4,500 FCFA</div>
+                <a href="#contact" class="btn">Commander</a>
+            </div>
+            <div class="menu-item">
+                <h3>🍲 Accra & Sauce</h3>
+                <p>Boules de maïs frit servies avec une délicieuse sauce tomate et oignon.</p>
+                <div class="price">1,800 FCFA</div>
+                <a href="#contact" class="btn">Commander</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="galerie" class="container">
+        <h2>Galerie</h2>
+        <div class="gallery">
+            <div class="gallery-item">🥘</div>
+            <div class="gallery-item">🍗</div>
+            <div class="gallery-item">🌮</div>
+            <div class="gallery-item">🍲</div>
+        </div>
+    </section>
+
+    <section id="avis" class="container">
+        <h2>Avis Clients</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"Vraiment excellent ! J'adore la qualité et la fraîcheur des plats. Je reviens chaque semaine !"</p>
+                <div class="author">- Marie Koffi</div>
+            </div>
+            <div class="testimonial">
+                <p>"Service rapide, accueil chaleureux. C'est devenu mon restaurant préféré à Lomé."</p>
+                <div class="author">- Yao Mensah</div>
+            </div>
+            <div class="testimonial">
+                <p>"Les saveurs authentiques togolaises, juste comme je les aime. Parfait pour les familles!"</p>
+                <div class="author">- Ama Sodenou</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Nous Contacter</h2>
+            <div class="contact-info">
+                <p>📍 Rue de la Paix, Lomé</p>
+                <p>📞 +228 90 XX XX XX</p>
+                <p>🕐 Ouvert 11h - 22h</p>
+            </div>
+
+            <form class="reservation-form" onsubmit="alert('Réservation envoyée ! Merci.'); return false;">
+                <div class="form-group">
+                    <label>Votre nom</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Votre téléphone</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Date souhaitée</label>
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Nombre de personnes</label>
+                    <input type="number" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Réserver une Table</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 La Saveur - Restaurant Local. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
