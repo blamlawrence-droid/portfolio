@@ -45,25 +45,107 @@
         nav a:hover {
             color: #d4a574;
         }
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 8%;
+    color: white;
 
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23d4a574" width="1200" height="600"/></svg>');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 150px 20px;
-            text-align: center;
-        }
+    background:
+        linear-gradient(to right,
+        rgba(0,0,0,0.85) 35%,
+        rgba(0,0,0,0.45) 60%,
+        rgba(0,0,0,0.15)),
+        url("114.png");
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
+.hero-content {
+    max-width: 650px;
+    z-index: 2;
+}
+
+.subtitle {
+    color: #d4a574;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.hero h1 span {
+    color: #d4a574;
+}
+
+.description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #e5e5e5;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+    background: #d4a574;
+    color: #2c2416;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: #e6b98a;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.4);
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: black;
+}
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 100px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
 
         .btn {
             display: inline-block;
@@ -130,7 +212,7 @@
         .gallery-item {
             background: #f0f0f0;
             aspect-ratio: 1;
-            border-radius: 4px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -240,6 +322,7 @@
             nav a {
                 margin-left: 1rem;
             }
+            
         }
     </style>
 </head>
@@ -257,28 +340,43 @@
     </nav>
 
     <section class="hero">
-        <h1>La Saveur</h1>
-        <p>Découvrez l'authenticité de la cuisine togolaise</p>
-        <a href="#menu" class="btn">Voir le Menu</a>
-    </section>
+    <div class="hero-content">
+        <p class="subtitle">BIENVENUE CHEZ LA SAVEUR</p>
+
+        <h1>
+            L’art de la cuisine,<br>
+            le plaisir du <span>goût</span>
+        </h1>
+
+        <p class="description">
+            Découvrez une expérience culinaire unique où chaque plat
+            est préparé avec passion et des ingrédients frais de qualité.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#contact" class="btn">Réserver une table</a>
+            <a href="#menu" class="btn btn-outline">Voir le menu</a>
+        </div>
+    </div>
+</section>
 
     <section id="menu" class="container">
         <h2>Notre Menu</h2>
         <div class="menu-grid">
             <div class="menu-item">
-                <h3>🥘 Fufu & Sauce</h3>
+                <h3>Fufu & Sauce</h3>
                 <p>Purée de banane plantain avec une sauce riche à base d'arachide et légumes frais.</p>
                 <div class="price">2,500 FCFA</div>
                 <a href="#contact" class="btn">Commander</a>
             </div>
             <div class="menu-item">
-                <h3>🍖 Grillades Mixtes</h3>
+                <h3> Grillades Mixtes</h3>
                 <p>Sélection de viandes grillées : poulet, boeuf et poisson avec légumes de saison.</p>
                 <div class="price">4,500 FCFA</div>
                 <a href="#contact" class="btn">Commander</a>
             </div>
             <div class="menu-item">
-                <h3>🍲 Accra & Sauce</h3>
+                <h3>Accra & Sauce</h3>
                 <p>Boules de maïs frit servies avec une délicieuse sauce tomate et oignon.</p>
                 <div class="price">1,800 FCFA</div>
                 <a href="#contact" class="btn">Commander</a>
@@ -289,10 +387,9 @@
     <section id="galerie" class="container">
         <h2>Galerie</h2>
         <div class="gallery">
-            <div class="gallery-item">🥘</div>
-            <div class="gallery-item">🍗</div>
-            <div class="gallery-item">🌮</div>
-            <div class="gallery-item">🍲</div>
+            <div class="gallery-item"><img src="122.jpg" alt="Fufu & Sauce" width="500" height="300" style="border-radius: 15px;"></div>
+            <div class="gallery-item"><img src="123.jpg" alt="Grillades Mixtes" width="500" height="300" style="border-radius: 15px;"></div>
+            <div class="gallery-item"><img src="124.jpg" alt="Accra & Sauce" width="500" height="300" style="border-radius: 15px;"></div>
         </div>
     </section>
 
